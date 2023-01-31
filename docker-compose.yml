@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  Container-A:
+    container_name: Container-A
+    build:
+      context: ./
+      dockerfile: Dockerfile_A
+      args:
+        image_name: nginx-a:st03
+    image: nginx-a:st03
+    ports:
+      - "8080:80"
+    volumes:
+      - ./a/index.html:/usr/share/nginx/html/index.html
+
+  Container-B:
+    container_name: Container-B
+    build:
+      context: ./
+      dockerfile: Dockerfile_B
+      args:
+        image_name: nginx-b:st03
+    image: nginx-b:st03
+    ports:
+      - "9090:80"
+    volumes:
+      - ./b/index.html:/usr/share/nginx/html/index.html

@@ -1,0 +1,8 @@
+# install package
+FROM nginx:1.23.3
+
+# copy website html data
+# COPY b/index.html /usr/share/nginx/html
+
+# expose the default port 80
+EXPOSE 80
